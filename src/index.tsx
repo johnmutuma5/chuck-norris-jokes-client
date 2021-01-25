@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ApolloClient, ApolloProvider, createHttpLink, InMemoryCache} from '@apollo/client';
+import {BrowserRouter} from 'react-router-dom';
 
 
 const apiLink = createHttpLink({ uri: 'https://chuck-norris-jokes-api-jm.herokuapp.com/graphql'});
@@ -15,7 +16,9 @@ const client = new ApolloClient({
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')

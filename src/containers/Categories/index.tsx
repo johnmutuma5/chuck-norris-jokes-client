@@ -2,10 +2,15 @@ import {useQuery} from '@apollo/client';
 import React, {useState} from 'react';
 import {JokeCategoriesDTO} from '../../common/types';
 import {CATEGORIES_QUERY} from '../../queries/getCategories';
+import RandomJoke from '../RandomJoke';
 import {CategoriesWrapper, CategoryItem} from './styles';
 
+interface IJokeCategoriesResponse {
+  categories: JokeCategoriesDTO;
+}
+
 const Categories: React.FC = () => {
-  const { loading, error, data } = useQuery<JokeCategoriesDTO>(CATEGORIES_QUERY); 
+  const { loading, error, data } = useQuery<IJokeCategoriesResponse>(CATEGORIES_QUERY); 
   const [ selectedCategory, setSelectedCategory ] = useState<string>();
 
   if(loading) {
@@ -31,7 +36,11 @@ const Categories: React.FC = () => {
           }
         </div>
         <div className='category-detail'>
-          { selectedCategory }
+          {
+            selectedCategory ?
+              <RandomJoke categoryId={ selectedCategory } /> :
+              <div>Chuck Norris is ready to crack your ribs!! Click on a category!!!</div>
+          }
         </div>
       </CategoriesWrapper>
     );

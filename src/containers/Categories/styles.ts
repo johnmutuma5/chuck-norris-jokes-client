@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 export const CategoriesWrapper = styled.div`
   display: flex;
+  overflow: hidden;
   div.category-names {
-    width: 33%;
+    min-width: 33%;
     max-height: 800px;
     overflow-y: auto;
     padding: 20px 0;
   }
   div.category-detail {
     padding: 20px;
+    background: #f5eddf;
+    width: 100%;
   }
 `;
 

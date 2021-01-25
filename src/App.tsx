@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import chucknorris from './static/chucknorris.png';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
-import Categories from './components/categories';
+import Categories from './containers/Categories';
 
 function App() {
   return (

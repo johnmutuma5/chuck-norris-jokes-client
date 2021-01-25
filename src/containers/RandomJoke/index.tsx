@@ -1,5 +1,6 @@
-import {gql, NetworkStatus, useQuery} from '@apollo/client';
+import {NetworkStatus, useQuery} from '@apollo/client';
 import React from 'react';
+import styled from 'styled-components';
 import {JokeDTO} from '../../common/types';
 import {GET_RANDOM_JOKE} from '../../queries/getRandomJoke';
 import {BorderedButton, JokeWrapper, RandomJokeWrapper} from './styles';
@@ -35,7 +36,10 @@ const RandomJoke: React.FC<IRandomJokeProps> = ({ categoryId }) => {
           <div>
             <img src={icon_url} alt="ICON" />
           </div>
-          <p>{text}</p>
+          <Blockquote>
+            <span>&ldquo;</span>
+            <p>{text}</p>
+          </Blockquote>
         </JokeWrapper>
         <BorderedButton onClick={ () => refetch() }>
           Show me another
@@ -44,5 +48,22 @@ const RandomJoke: React.FC<IRandomJokeProps> = ({ categoryId }) => {
     );
   }
 }
+
+const Blockquote = styled.div`
+  border: 1px solid #e4ddcf;
+  border-left-width: 10px;
+  border-left-color: #6b5735;
+  padding: 60px 25px 30px 25px;
+  margin: 25px;
+  font-size: 1.5em;
+  font-family: fantasy;
+  color: #8e8473;
+  position: relative;
+  span {
+    font-size: 5em;
+    position: absolute;
+    top: 0;
+  }
+`;
 
 export default RandomJoke;

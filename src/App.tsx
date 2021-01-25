@@ -31,8 +31,8 @@ const TopBarWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 0;
-  background: #422b02;
   width: 100vw;
+  border-bottom: 1px solid #8e8473;
   height: 60px;
   img {
     height: 100%;
@@ -46,7 +46,7 @@ const TopBarWrapper = styled.div`
     display: flex;
     font-size: 1.5em;
     font-family: fantasy;
-    color: white;
+    color: #422b02;
     font-weight: bold;
     align-items: center;
   }

@@ -12,13 +12,17 @@ function App() {
       <header className="App-header">
         <TopBarWrapper>
           <NavLink to="/">
-            <div className='logo-image'>
+            <LogoImageWrapper>
               <img width="60" src={chucknorris} alt="Chuck Norris" />
-            </div>
+            </LogoImageWrapper>
           </NavLink>
           <div>
-            <div className='logo-title'>Laugh Industry!</div>
-            <div className='logo-description'>Chuck Norris will crack your ribs!!</div>
+            <LogoTitleWrapper>
+              Laugh Industry!
+            </LogoTitleWrapper>
+            <LogoDescriptionWrapper>
+              Chuck Norris will crack your ribs!!
+            </LogoDescriptionWrapper>
           </div>
         </TopBarWrapper>
       </header>
@@ -34,6 +38,31 @@ function App() {
   );
 }
 
+const LogoDescriptionWrapper = styled.div`
+  font-size: .75em;
+  font-style: italic;
+  color: #e0bd7e;
+`;
+
+const LogoTitleWrapper = styled.div`
+  display: flex;
+  font-size: 1.5em;
+  font-family: fantasy;
+  color: #6b5735;
+  font-weight: bold;
+  align-items: center;
+`;
+
+const LogoImageWrapper = styled.div`
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden;
+  background: #6b5735;
+  padding-right: 15px;
+  margin: 0 12.5px 10px;
+`;
+
 const TopBarWrapper = styled.div`
   display: flex;
   position: fixed;
@@ -43,29 +72,6 @@ const TopBarWrapper = styled.div`
   width: 100vw;
   border-bottom: 1px solid #8e8473;
   height: 60px;
-  .logo-image {
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    overflow: hidden;
-    background: #6b5735;
-  }
-  div {
-    padding-left: 10px;
-    color: #e0bd7e;
-  }
-  div.logo-title {
-    display: flex;
-    font-size: 1.5em;
-    font-family: fantasy;
-    color: #422b02;
-    font-weight: bold;
-    align-items: center;
-  }
-  div.logo-description {
-    font-size: .75em;
-    font-style: italic;
-  }
 `;
 
 

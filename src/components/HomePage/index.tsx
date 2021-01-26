@@ -2,12 +2,13 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components';
 import {BorderedButton} from '../../containers/RandomJoke/styles';
-
+import portrait from '../../static/chucknorris-potrait.png';
 
 const HomePage: React.FC = (props) => {
   return (
     <HomePageWrapper>
       <div className='hero-content'>
+        <img width="150" src={portrait} alt="me" />
         <p className='hero-title'>
           Brace yourself!! Chuck Norris is coming your way!!!
         </p>
@@ -41,7 +42,7 @@ const HomePageWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background: rgba(255,255,255,.9);
-    padding: 50px 200px;
+    padding: 50px 150px;
     .hero-title {
       color: #a5731a;
       font-size: 2em;

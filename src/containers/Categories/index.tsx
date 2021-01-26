@@ -5,6 +5,9 @@ import Loader from '../../components/Loader';
 import {CATEGORIES_QUERY} from '../../queries/getCategories';
 import RandomJoke from '../RandomJoke';
 import {CategoriesWrapper, CategoryItem} from './styles';
+import portrait from '../../static/chucknorris-potrait.png';
+
+
 
 interface IJokeCategoriesResponse {
   categories: JokeCategoriesDTO;
@@ -48,6 +51,7 @@ const Categories: React.FC = () => {
                 </React.Fragment>
               ) :
               <div className='detail-placeholder'>
+                <img width="80" src={portrait} alt="Chuck Norris" />
                 <p className='title'>Chuck Norris is ready to crack your ribs!!</p>
                 <p>Choose a category on the left!!!</p>
               </div>

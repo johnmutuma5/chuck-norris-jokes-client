@@ -11,7 +11,7 @@ function App() {
     <React.Fragment>
       <header className="App-header">
         <TopBarWrapper>
-          <img src={chucknorris} alt='Chuck Norris' />
+          <img width="90" src={chucknorris} alt="Chuck Norris" />
           <div>
             <div className='logo-title'>Laugh Industry!</div>
             <div className='logo-description'>Chuck Norris will crack your ribs!!</div>

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import chucknorris from './static/chucknorris.png';
 import './App.css';
-import {Route, Switch} from 'react-router-dom';
+import {NavLink, Route, Switch} from 'react-router-dom';
 import Categories from './containers/Categories';
 import HomePage from './components/HomePage';
 
@@ -11,7 +11,11 @@ function App() {
     <React.Fragment>
       <header className="App-header">
         <TopBarWrapper>
-          <img width="90" src={chucknorris} alt="Chuck Norris" />
+          <NavLink to="/">
+            <div className='logo-image'>
+              <img width="60" src={chucknorris} alt="Chuck Norris" />
+            </div>
+          </NavLink>
           <div>
             <div className='logo-title'>Laugh Industry!</div>
             <div className='logo-description'>Chuck Norris will crack your ribs!!</div>
@@ -38,9 +42,12 @@ const TopBarWrapper = styled.div`
   width: 100vw;
   border-bottom: 1px solid #8e8473;
   height: 60px;
-  img {
-    height: 100%;
-    width: 75px;
+  .logo-image {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    background: #6b5735;
   }
   div {
     padding-left: 10px;

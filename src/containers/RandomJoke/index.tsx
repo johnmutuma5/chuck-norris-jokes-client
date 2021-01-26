@@ -67,7 +67,7 @@ const Blockquote = styled.div`
   color: #755011;
   position: relative;
   width: 85%;
-  box-shadow: 1px 2px 3px #b7b0b0;
+  box-shadow: 0 1px 1px #b7b0b0;
   span {
     font-size: 5em;
     position: absolute;

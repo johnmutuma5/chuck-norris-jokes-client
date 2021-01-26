@@ -12,19 +12,29 @@ export const JokeWrapper = styled.div`
   align-items: center;
 `;
 
-export const BorderedButton = styled.button`
+export const Blockquote = styled.div`
+  display: flex;
+  border: 1px solid #e4ddcf;
+  border-left-width: 10px;
+  border-left-color: #6b5735;
+  background: #f5f0e8;
+  padding: 40px 25px 30px 25px;
+  margin: 25px;
+  font-size: 1.25em;
+  font-family: fantasy;
+  color: #755011;
   position: relative;
-  color: inherit;
-  margin: auto;
-  background: transparent;
-  border: 1px solid #b99b66;
-  border-radius: 9999px;
-  padding: 10px 15px;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 1px 2px 5px #e1e1e1;
-    background: #b99b66;
-    color: white;
+  width: 85%;
+  box-shadow: 0 1px 1px #b7b0b0;
+  span {
+    font-size: 5em;
+    position: absolute;
+    top: -10px;
+  }
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
   }
 `;
 

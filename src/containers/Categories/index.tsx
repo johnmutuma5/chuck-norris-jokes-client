@@ -1,11 +1,12 @@
 import {useQuery} from '@apollo/client';
-import React, {useState} from 'react';
+import React from 'react';
 import {JokeCategoriesDTO} from '../../common/types';
 import Loader from '../../components/Loader';
 import {CATEGORIES_QUERY} from '../../queries/getCategories';
 import RandomJoke from '../RandomJoke';
-import {CategoriesWrapper, CategoryItem} from './styles';
+import {CategoriesWrapper, CategoryDetail, CategoryDetailsPlaceholder, CategoryDetailsTitle, CategoryNames} from './styles';
 import portrait from '../../static/chucknorris-potrait.png';
+import {NavLink, useParams} from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ interface IJokeCategoriesResponse {
 
 const Categories: React.FC = () => {
   const { loading, error, data } = useQuery<IJokeCategoriesResponse>(CATEGORIES_QUERY); 
-  const [ selectedCategory, setSelectedCategory ] = useState<string>();
+  const { id: selectedCategory } = useParams<{id: string}>();
 
   if(loading) {
     return <Loader>Loading joke categories</Loader>;
@@ -26,37 +27,39 @@ const Categories: React.FC = () => {
   } else {
     return (
       <CategoriesWrapper>
-        <div className='category-names'>
+        <CategoryNames>
           {
             data?.categories.value.map(category => (
-              <CategoryItem onClick={ (_) => setSelectedCategory(category) }
-                className={(selectedCategory === category ? 'active': 'inactive')}
-                key={category}
+              <NavLink key={category}
+                       className='category-link'
+                       activeClassName='active'
+                       to={ `/categories/${category}` }
               >
                 { category }
-              </CategoryItem>
-            )
-                                      )
+              </NavLink>
+            ))
           }
-        </div>
-        <div className='category-detail'>
+        </CategoryNames>
+        <CategoryDetail>
+          <img width="80" src={portrait} alt="Chuck Norris" />
           {
             selectedCategory ?
               (
                 <React.Fragment>
-                  <div className='category-detail-title'>
+                  <CategoryDetailsTitle>
                     What do you think about the&nbsp;<span>{selectedCategory}</span>&nbsp;life of Chuck??
-                  </div>
+                  </CategoryDetailsTitle>
                   <RandomJoke categoryId={ selectedCategory } />
                 </React.Fragment>
               ) :
-              <div className='detail-placeholder'>
-                <img width="80" src={portrait} alt="Chuck Norris" />
-                <p className='title'>Chuck Norris is ready to crack your ribs!!</p>
-                <p>Choose a category on the left!!!</p>
-              </div>
+              <CategoryDetailsPlaceholder>
+                <CategoryDetailsTitle>
+                  Chuck Norris is ready to crack your ribs!!
+                </CategoryDetailsTitle>
+                <p>Choose a category on the left.</p>
+              </CategoryDetailsPlaceholder>
           }
-        </div>
+        </CategoryDetail>
       </CategoriesWrapper>
     );
   }

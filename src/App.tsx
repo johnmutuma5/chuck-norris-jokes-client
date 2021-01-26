@@ -27,6 +27,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/categories" component={Categories} />
+          <Route exact path="/categories/:id" component={Categories} />
         </Switch>
       </AppBodyWrapper>
     </React.Fragment>

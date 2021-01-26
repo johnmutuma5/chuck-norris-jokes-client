@@ -59,14 +59,14 @@ const Blockquote = styled.div`
   border: 1px solid #e4ddcf;
   border-left-width: 10px;
   border-left-color: #6b5735;
-  background: #dcc69d;
-  padding: 60px 25px 30px 25px;
+  background: #f5f0e8;
+  padding: 40px 25px 30px 25px;
   margin: 25px;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-family: fantasy;
   color: #755011;
   position: relative;
-  width: 75%;
+  width: 85%;
   box-shadow: 1px 2px 3px #b7b0b0;
   span {
     font-size: 5em;

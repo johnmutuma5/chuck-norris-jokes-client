@@ -4,6 +4,7 @@ import chucknorris from './static/chucknorris.png';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
 import Categories from './containers/Categories';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
       <AppBodyWrapper>
         <Switch>
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/categories" component={Categories} />
         </Switch>
       </AppBodyWrapper>
@@ -32,6 +34,7 @@ const TopBarWrapper = styled.div`
   position: fixed;
   top: 0;
   padding: 5px;
+  background: white;
   width: 100vw;
   border-bottom: 1px solid #8e8473;
   height: 60px;

@@ -33,11 +33,11 @@ const RandomJoke: React.FC<IRandomJokeProps> = ({ categoryId }) => {
     return  (
       <RandomJokeWrapper>
         <JokeWrapper>
-          <div>
-            <img src={icon_url} alt="ICON" />
-          </div>
           <Blockquote>
             <span>&ldquo;</span>
+            <div className="icon-wrapper">
+              <img src={icon_url} alt="ICON" />
+            </div>
             <p>{text}</p>
           </Blockquote>
         </JokeWrapper>
@@ -50,19 +50,28 @@ const RandomJoke: React.FC<IRandomJokeProps> = ({ categoryId }) => {
 }
 
 const Blockquote = styled.div`
+  display: flex;
   border: 1px solid #e4ddcf;
   border-left-width: 10px;
   border-left-color: #6b5735;
+  background: #cabca2;
   padding: 60px 25px 30px 25px;
   margin: 25px;
   font-size: 1.5em;
   font-family: fantasy;
-  color: #8e8473;
+  color: #755011;
   position: relative;
+  width: 75%;
+  box-shadow: 1px 2px 3px #b7b0b0;
   span {
     font-size: 5em;
     position: absolute;
-    top: 0;
+    top: -10px;
+  }
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
   }
 `;
 

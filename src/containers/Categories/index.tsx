@@ -38,7 +38,14 @@ const Categories: React.FC = () => {
         <div className='category-detail'>
           {
             selectedCategory ?
-              <RandomJoke categoryId={ selectedCategory } /> :
+              (
+                <React.Fragment>
+                  <div className='category-detail-title'>
+                    <span>{selectedCategory}</span>&nbsp;Jokes about the Legend!
+                  </div>
+                  <RandomJoke categoryId={ selectedCategory } />
+                </React.Fragment>
+              ) :
               <div>Chuck Norris is ready to crack your ribs!! Click on a category!!!</div>
           }
         </div>

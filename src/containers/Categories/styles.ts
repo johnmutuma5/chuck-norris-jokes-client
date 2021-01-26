@@ -4,7 +4,7 @@ export const CategoriesWrapper = styled.div`
   display: flex;
   overflow: hidden;
   div.category-names {
-    min-width: 33%;
+    min-width: 25%;
     max-height: 800px;
     overflow-y: auto;
     padding: 20px 0;
@@ -14,10 +14,21 @@ export const CategoriesWrapper = styled.div`
     background: #f5eddf;
     width: 100%;
   }
+  div.category-detail-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4c4439;
+    span {
+      text-transform: capitalize;
+    }
+  }
 `;
 
 export const CategoryItem = styled.div`
-  padding: 20px;
+  padding: 12px;
+  font-size: 12px;
   text-transform: capitalize;
   cursor: pointer;
   &:not(:last-child) {
@@ -25,6 +36,9 @@ export const CategoryItem = styled.div`
   }
   &:hover, &.active {
     background: #f5eddf;
+  }
+  &.active {
+    font-weight: bold;
   }
 `;
 

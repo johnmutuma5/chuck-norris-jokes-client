@@ -14,6 +14,7 @@ export const JokeWrapper = styled.div`
 
 export const BorderedButton = styled.button`
   position: relative;
+  color: inherit;
   margin: auto;
   background: transparent;
   border: 1px solid #b99b66;
@@ -22,6 +23,8 @@ export const BorderedButton = styled.button`
   cursor: pointer;
   &:hover {
     box-shadow: 1px 2px 5px #e1e1e1;
+    background: #b99b66;
+    color: white;
   }
 `;
 

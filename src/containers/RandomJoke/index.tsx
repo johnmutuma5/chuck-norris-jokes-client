@@ -2,6 +2,7 @@ import {NetworkStatus, useQuery} from '@apollo/client';
 import React from 'react';
 import styled from 'styled-components';
 import {JokeDTO} from '../../common/types';
+import Loader from '../../components/Loader';
 import {GET_RANDOM_JOKE} from '../../queries/getRandomJoke';
 import {BorderedButton, JokeWrapper, RandomJokeWrapper} from './styles';
 
@@ -23,7 +24,11 @@ const RandomJoke: React.FC<IRandomJokeProps> = ({ categoryId }) => {
 
 
   if(loading || networkStatus === NetworkStatus.refetch) {
-    return <div>Loading...</div>;
+    return (
+      <Loader>
+        Hold on ... Cooking a {categoryId} joke!!
+      </Loader>
+    );
   } else if(error) {
     return <div>error</div>;
   } else if(data?.random_joke.status !== 200) {
@@ -54,7 +59,7 @@ const Blockquote = styled.div`
   border: 1px solid #e4ddcf;
   border-left-width: 10px;
   border-left-color: #6b5735;
-  background: #cabca2;
+  background: #dcc69d;
   padding: 60px 25px 30px 25px;
   margin: 25px;
   font-size: 1.5em;

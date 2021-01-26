@@ -1,6 +1,7 @@
 import {useQuery} from '@apollo/client';
 import React, {useState} from 'react';
 import {JokeCategoriesDTO} from '../../common/types';
+import Loader from '../../components/Loader';
 import {CATEGORIES_QUERY} from '../../queries/getCategories';
 import RandomJoke from '../RandomJoke';
 import {CategoriesWrapper, CategoryItem} from './styles';
@@ -14,7 +15,7 @@ const Categories: React.FC = () => {
   const [ selectedCategory, setSelectedCategory ] = useState<string>();
 
   if(loading) {
-    return <div>Loading...</div>;
+    return <Loader>Loading joke categories</Loader>;
   } else if(error) {
     return <div>error</div>;
   } else if(data?.categories.status !== 200) {
@@ -46,7 +47,10 @@ const Categories: React.FC = () => {
                   <RandomJoke categoryId={ selectedCategory } />
                 </React.Fragment>
               ) :
-              <div>Chuck Norris is ready to crack your ribs!! Click on a category!!!</div>
+              <div className='detail-placeholder'>
+                <p className='title'>Chuck Norris is ready to crack your ribs!!</p>
+                <p>Choose a category on the left!!!</p>
+              </div>
           }
         </div>
       </CategoriesWrapper>

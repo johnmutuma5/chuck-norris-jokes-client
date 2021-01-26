@@ -31,6 +31,7 @@ const TopBarWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 0;
+  padding: 5px;
   width: 100vw;
   border-bottom: 1px solid #8e8473;
   height: 60px;
@@ -59,7 +60,7 @@ const TopBarWrapper = styled.div`
 
 const AppBodyWrapper = styled.main`
   width: 85%;
-  margin: 75px auto;
+  margin: 100px auto;
   border: 1px solid #e0dede;
   border-radius: 10px;
 `;

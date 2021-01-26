@@ -13,6 +13,20 @@ export const CategoriesWrapper = styled.div`
     padding: 20px;
     background: #f5eddf;
     width: 100%;
+    div.detail-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p.title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      p + p {
+        font-style: italic;
+      }
+    }
   }
   div.category-detail-title {
     display: flex;
@@ -24,6 +38,7 @@ export const CategoriesWrapper = styled.div`
       text-transform: capitalize;
     }
   }
+
 `;
 
 export const CategoryItem = styled.div`

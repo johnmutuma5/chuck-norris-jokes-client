@@ -1,6 +1,6 @@
 import {gql} from "@apollo/client";
 
-export const CATEGORIES_QUERY = gql`
+export const GET_CATEGORIES = gql`
   query JokeCategores {
     categories {
       status

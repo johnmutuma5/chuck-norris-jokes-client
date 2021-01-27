@@ -2,7 +2,7 @@ import {useQuery} from '@apollo/client';
 import React from 'react';
 import {JokeCategoriesDTO} from '../../common/types';
 import Loader from '../../components/Loader';
-import {CATEGORIES_QUERY} from '../../queries/getCategories';
+import {GET_CATEGORIES} from '../../queries/getCategories';
 import RandomJoke from '../RandomJoke';
 import {CategoriesWrapper, CategoryDetail, CategoryDetailsPlaceholder, CategoryDetailsTitle, CategoryNames} from './styles';
 import portrait from '../../static/chucknorris-potrait.png';
@@ -15,7 +15,7 @@ interface IJokeCategoriesResponse {
 }
 
 const Categories: React.FC = () => {
-  const { loading, error, data } = useQuery<IJokeCategoriesResponse>(CATEGORIES_QUERY); 
+  const { loading, error, data } = useQuery<IJokeCategoriesResponse>(GET_CATEGORIES); 
   const { id: selectedCategory } = useParams<{id: string}>();
 
   if(loading) {

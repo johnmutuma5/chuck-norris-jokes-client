@@ -39,7 +39,7 @@ export const CategoryNames = styled.div`
 export const CategoryDetailsTitle = styled.p`
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: bold;
   color: #4c4439;
   margin-top: 10px;

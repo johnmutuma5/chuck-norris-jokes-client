@@ -13,7 +13,7 @@ function App() {
         <TopBarWrapper>
           <NavLink to="/">
             <LogoImageWrapper>
-              <img width="60" src={chucknorris} alt="Chuck Norris" />
+              <img width="50" height="50" src={chucknorris} alt="Chuck Norris" />
             </LogoImageWrapper>
           </NavLink>
           <div>
@@ -39,14 +39,14 @@ function App() {
 }
 
 const LogoDescriptionWrapper = styled.div`
-  font-size: .75em;
+  font-size: .65em;
   font-style: italic;
   color: #e0bd7e;
 `;
 
 const LogoTitleWrapper = styled.div`
   display: flex;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-family: fantasy;
   color: #6b5735;
   font-weight: bold;
@@ -54,8 +54,8 @@ const LogoTitleWrapper = styled.div`
 `;
 
 const LogoImageWrapper = styled.div`
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 100%;
   overflow: hidden;
   background: #6b5735;
@@ -67,7 +67,7 @@ const TopBarWrapper = styled.div`
   display: flex;
   position: fixed;
   top: 0;
-  padding: 5px;
+  padding: 2px;
   background: white;
   width: 100vw;
   border-bottom: 1px solid #8e8473;

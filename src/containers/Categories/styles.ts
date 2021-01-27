@@ -3,15 +3,17 @@ import styled from "styled-components";
 export const CategoriesWrapper = styled.div`
   display: flex;
   overflow: hidden;
+  background: white;
 `;
 
 export const CategoryDetail = styled.div`
   padding: 20px;
-  background: #f5eddf;
+  border-left: 2px solid #f9f6f1;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
 export const CategoryNames = styled.div`

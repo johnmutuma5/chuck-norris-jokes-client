@@ -7,5 +7,6 @@ const LoaderWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  background: white;
 `
 export default LoaderWrapper;

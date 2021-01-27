@@ -70,16 +70,16 @@ const TopBarWrapper = styled.div`
   padding: 2px;
   background: white;
   width: 100vw;
-  border-bottom: 1px solid #8e8473;
-  height: 60px;
+  box-shadow: 1px 1px 3px #8e8473;
 `;
 
 
 const AppBodyWrapper = styled.main`
   width: 85%;
   margin: 100px auto;
-  border: 1px solid #e0dede;
-  border-radius: 10px;
+  border: 1px solid #b7b4ae;
+  border-radius: 7.5px;
+  overflow: hidden;
 `;
 
 export default App;

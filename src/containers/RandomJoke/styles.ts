@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const RandomJokeWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 85%;
 `;
 
 export const JokeWrapper = styled.div`
@@ -24,7 +25,7 @@ export const Blockquote = styled.div`
   font-family: fantasy;
   color: #755011;
   position: relative;
-  width: 85%;
+  min-width: 85%;
   box-shadow: 0 1px 1px #b7b0b0;
   span {
     font-size: 5em;

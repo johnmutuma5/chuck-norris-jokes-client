@@ -3,9 +3,10 @@ import styled, {createGlobalStyle} from "styled-components";
 const GlobalStylesWrapper = createGlobalStyle`
   html, body  {
     color: #251801;
+    background: #e6e5e2;
   }
 `;
-
+// #f5eddf
 export const BorderedButton = styled.button`
   position: relative;
   color: inherit;

@@ -3,12 +3,12 @@ import wait from 'waait';
 import Categories from '.';
 import {MemoryRouter} from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider, MockedResponse } from '@apollo/react-testing'
 import {GET_CATEGORIES} from '../../queries/getCategories';
 import {act} from 'react-dom/test-utils';
 
 const CategoriesProviders: React.FC = ({ children }: any) => {
-  const mocks: any[] = [
+  const mocks: ReadonlyArray<MockedResponse> = [
     {
       request: {
         query: GET_CATEGORIES

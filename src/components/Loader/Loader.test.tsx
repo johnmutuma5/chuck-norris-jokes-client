@@ -3,7 +3,7 @@ import {MemoryRouter} from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import Loader from '.';
 
-describe('App', () => {
+describe('Loader', () => {
   it('renders the text in body', () => {
     render(<Loader>Loader text</Loader>, { wrapper: MemoryRouter });
     const linkElement = screen.getByText(/Loader text/i);
